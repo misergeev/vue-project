@@ -9,21 +9,11 @@
 </head>
 <body>
     <div id="app">
-        <div v-for="(item, i) in items" :index="i" :data-id="item.id" style="margin: 0 0 30px 0;">
-            <p>
-                <span>{{ i + 1 }}. </span><b>{{ item.name }}</b>
-            </p>
-            <p v-if="item.descr">{{ item.descr }}</p>
-            <p @click="deleteElem">УДАЛИТЬ</p>
-            <hr>
-        </div>
-        <form @submit.prevent="onSubmit">
-            <input type="text" v-model="name">
-            <input type="text" v-model="descr">
-            <input type="submit">
-        </form>
+        <element-display></element-display>
     </div>
     <script src="./main.js"></script>
+    <script src="./components/ElementDisplay.js"></script>
+    <script src="./components/AddElementForm.js"></script>
     <script>
         const mountedApp = app.mount('#app');
     </script>
