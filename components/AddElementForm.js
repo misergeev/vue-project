@@ -12,9 +12,15 @@ app.component('add-element-form', {
         }
     },
     methods: {
+        formClear() {
+            this.name = '';
+            this.descr = '';
+        },
         onSubmit() {
             if (this.name === '') {
-                alert('Name is empty')
+                alert('Название дела не введено!');
+                this.formClear();
+                return;
             }
 
 
@@ -26,8 +32,7 @@ app.component('add-element-form', {
 
             this.$emit('add-to-list', newItem)
 
-            this.name = '';
-            this.descr = '';
+            this.formClear();
         }
     }
 })
