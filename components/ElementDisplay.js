@@ -1,8 +1,10 @@
 app.component('element-display', {
     template:
     `
-    <h1 class="todo-title">{{ title }}</h1>
-    <add-element-form @add-to-list="onSubmit"></add-element-form>
+    <div class="todo-header">
+        <h1 class="todo-title">{{ title }}</h1>
+        <add-element-form @add-to-list="onSubmit"></add-element-form>
+    </div>
     <div
         class="todo-item"
         v-for="(item, i) in items"
