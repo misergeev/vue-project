@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue практика</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <div id="app">
-        <element-display></element-display>
+        <div class="todo-wrap">
+            <element-display></element-display>
+        </div>
     </div>
     <script src="./main.js"></script>
     <script src="./components/ElementDisplay.js"></script>
@@ -17,10 +20,5 @@
     <script>
         const mountedApp = app.mount('#app');
     </script>
-    <style>
-        .completeElem {
-            background: rgba(0, 184, 68, 0.5);
-        }
-    </style>
 </body>
 </html>

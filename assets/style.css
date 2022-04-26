@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#app {
+    height: 100vh;
+    background: url('./image/background.jpg') center center / cover no-repeat;
+}
+.todo-wrap {
+    width: 100%;
+    max-width: 920px;
+    height: calc(100% - 60px);
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+}
+.todo-title {
+    text-align: center;
+}
+.todo-item {
+    margin: 0 0 30px 0;
+}
+.completeElem {
+    background: rgba(0, 184, 68, 0.5);
+}
+
+.todo-form {
+    display: flex;
+    justify-content: space-between;
+}

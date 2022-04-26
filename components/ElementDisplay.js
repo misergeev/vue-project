@@ -1,11 +1,14 @@
 app.component('element-display', {
     template:
-    `<div
+    `
+    <h1 class="todo-title">{{ title }}</h1>
+    <add-element-form @add-to-list="onSubmit"></add-element-form>
+    <div
+        class="todo-item"
         v-for="(item, i) in items"
         v-if="items.length"
         :data-id="item.id"
         :class="{ completeElem: item.completed }"
-        style="margin: 0 0 30px 0;"
     >
         <p>
             <span>{{ i + 1 }}. </span><b>{{ item.name }}</b>
@@ -17,9 +20,10 @@ app.component('element-display', {
         <hr>
     </div>
     <p v-else>Нет дел</p>
-    <add-element-form @add-to-list="onSubmit"></add-element-form>`,
+    `,
     data() {
         return {
+            title: 'Список дел',
             items: [
                 {id: 1, name: 'Прибраться', descr: 'Нужно прибрать комнату', completed: false},
                 {id: 2, name: 'Сходить в магазин', completed: false},
@@ -27,14 +31,14 @@ app.component('element-display', {
             ],
             name: '',
             descr: ''
-        }
+        };
     },
     methods: {
         deleteElem(element) {
             let elementId = element.path[1].dataset.id;
             for (let i = 0; i < this.items.length; i++ ) {
                 if (elementId == this.items[i].id) {
-                    this.items.splice(i, 1)
+                    this.items.splice(i, 1);
                 }
             }
         },
@@ -50,4 +54,4 @@ app.component('element-display', {
             this.items.push(newElem);
         }
     }
-})
+});

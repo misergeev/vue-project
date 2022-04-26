@@ -1,6 +1,9 @@
 app.component('add-element-form', {
     template:
-    `<form @submit.prevent="onSubmit">
+    `<form
+        class="todo-form"
+        @submit.prevent="onSubmit"
+    >
         <input type="text" v-model="name">
         <input type="text" v-model="descr">
         <input type="submit">
@@ -9,7 +12,7 @@ app.component('add-element-form', {
         return {
             name: '',
             descr: '',
-        }
+        };
     },
     methods: {
         formClear() {
